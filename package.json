@@ -4,11 +4,21 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron main"
+    "start": "npm run electron",
+    "electron": "electron main"
   },
-  "dependencies": {},
+  "dependencies": {
+    "concurrently": "^3.5.1",
+    "execa": "^0.9.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
   "devDependencies": {
-    "electron": "1.8.2"
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "electron": "1.8.2",
+    "electron-debug": "^1.5.0",
+    "parcel-bundler": "^1.6.2"
   },
   "keywords": [],
   "author": "",
