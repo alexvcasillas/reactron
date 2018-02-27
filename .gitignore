@@ -59,3 +59,12 @@ typings/
 
 # next.js build output
 .next
+
+# Parceljs cache files
+.cache
+
+# Build files
+build
+
+# Dist files
+dist

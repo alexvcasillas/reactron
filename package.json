@@ -5,10 +5,10 @@
   "main": "main.js",
   "scripts": {
     "start": "npm run electron",
-    "electron": "electron main"
+    "electron": "electron main",
+    "parcel-production": "parcel build ./src/index.js --out-dir build/output"
   },
   "dependencies": {
-    "concurrently": "^3.5.1",
     "execa": "^0.9.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
@@ -16,8 +16,10 @@
   "devDependencies": {
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "devtron": "^1.4.0",
     "electron": "1.8.2",
     "electron-debug": "^1.5.0",
+    "electron-react-devtools": "^0.5.3",
     "parcel-bundler": "^1.6.2"
   },
   "keywords": [],
