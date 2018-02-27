@@ -1,30 +1,15 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const { setMainMenu } = require('./app-menu');
-const execa = require('execa');
+const { startParcelProcess } = require('./parcel');
 
 const { environment } = require('./config');
 
-require('electron-debug')({ showDevTools: true });
+if (environment === 'DEVELOPMENT') {
+  require('electron-debug')({ showDevTools: true });
+}
 
 let mainWindow;
-
-function runParcel() {
-  return new Promise(resolve => {
-    let output = '';
-    const parcelProcess = execa('parcel', ['index.html']);
-    const concat = chunk => {
-      output += chunk;
-      console.log(output);
-      if (output.includes('Built in ')) {
-        parcelProcess.stdout.removeListener('data', concat);
-        console.log(output);
-        resolve();
-      }
-    };
-    parcelProcess.stdout.on('data', concat);
-  });
-}
 
 app.on('ready', async () => {
   // Create the browser main window
@@ -32,10 +17,12 @@ app.on('ready', async () => {
     show: false,
   });
   if (environment === 'DEVELOPMENT') {
-    await runParcel();
-    // Set the load URL
+    // Start the parcel process to launch the development server
+    await startParcelProcess();
+    // Set the load URL to the development server
     mainWindow.loadURL('http://localhost:1234');
   } else {
+    // If it's not the development build then load the production index
     mainWindow.loadURL(path.join('file://', __dirname, 'index-production.html'));
   }
   // Set the menu of the main window's application

@@ -1,19 +1,22 @@
 {
   "name": "reactron",
-  "product": "Reactron",
+  "productName": "Reactron",
   "version": "0.0.1",
   "description": "Build Desktop applications with React and Electron",
   "main": "main.js",
   "scripts": {
     "start": "npm run electron",
     "electron": "electron main",
-    "parcel-production": "parcel build ./src/index.js --out-dir build",
-    "package": "build"
+    "parcel-production": "parcel build ./src/index.js --out-dir app",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
     "execa": "^0.9.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "electron-debug": "^1.5.0"
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.1",
@@ -27,12 +30,7 @@
   },
   "build": {
     "appId": "com.alexvcasillas.reactron",
-    "files": [
-      "!dist${/*}",
-      "!.cache${/*}",
-      "!src${/*}",
-      "!.gitignore"
-    ]
+    "files": ["!dist${/*}", "!.cache${/*}", "!src${/*}", "!.gitignore"]
   },
   "keywords": [],
   "author": "",
