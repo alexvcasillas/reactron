@@ -61,9 +61,10 @@ typings/
 .next
 
 # Parceljs cache files
-
+.cache
 
 # Build files
 build
 
 # Dist files
+dist
