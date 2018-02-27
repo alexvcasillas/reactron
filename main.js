@@ -3,6 +3,8 @@ const path = require('path');
 const { setMainMenu } = require('./app-menu');
 const execa = require('execa');
 
+const { environment } = require('./config');
+
 require('electron-debug')({ showDevTools: true });
 
 let mainWindow;
@@ -29,9 +31,13 @@ app.on('ready', async () => {
   mainWindow = new BrowserWindow({
     show: false,
   });
-  await runParcel();
-  // Set the load URL
-  mainWindow.loadURL('http://localhost:1234');
+  if (environment === 'DEVELOPMENT') {
+    await runParcel();
+    // Set the load URL
+    mainWindow.loadURL('http://localhost:1234');
+  } else {
+    mainWindow.loadURL(path.join('file://', __dirname, 'index-production.html'));
+  }
   // Set the menu of the main window's application
   setMainMenu();
   // When the main window is ready, show it
