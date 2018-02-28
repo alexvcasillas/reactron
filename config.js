@@ -1,4 +1,4 @@
-const environment = 'PRODUCTION';
+const environment = 'DEVELOPMENT';
 
 module.exports = {
   environment,

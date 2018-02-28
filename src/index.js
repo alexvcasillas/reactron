@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class HelloMessage extends React.Component {
+import { Title } from './components/title.component';
+
+class App extends React.Component {
   render() {
-    return <div>Hello {this.props.name}</div>;
+    return <Title />;
   }
 }
 
 var mountNode = document.getElementById('root');
-ReactDOM.render(<HelloMessage name="Alex" />, mountNode);
+ReactDOM.render(<App />, mountNode);

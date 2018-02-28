@@ -1,6 +1,6 @@
 const execa = require('execa');
 
-export const startParcelProcess = () =>
+const startParcelProcess = () =>
   new Promise(resolve => {
     let output = '';
     const parcelProcess = execa('parcel', ['index.html']);
@@ -15,3 +15,7 @@ export const startParcelProcess = () =>
     };
     parcelProcess.stdout.on('data', concat);
   });
+
+module.exports = {
+  startParcelProcess,
+};
