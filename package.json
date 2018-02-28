@@ -30,14 +30,9 @@
   },
   "build": {
     "appId": "com.alexvcasillas.reactron",
-    "files": [
-      "!dist${/*}",
-      "!.cache${/*}",
-      "!src${/*}",
-      "!.gitignore"
-    ]
+    "files": ["!dist${/*}", "!.cache${/*}", "!src${/*}", "!.gitignore"]
   },
   "keywords": [],
-  "author": "",
+  "author": "Alex Casillas <@alexvcasillas>",
   "license": "ISC"
 }
