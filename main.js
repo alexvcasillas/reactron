@@ -16,8 +16,7 @@ app.on('ready', async () => {
   mainWindow = new BrowserWindow({
     show: false,
     webPreferences: {
-      nodeIntegration: false,
-      preload: "./preload.js"
+      nodeIntegration: false
     }
   });
   if (environment === 'DEVELOPMENT') {
