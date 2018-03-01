@@ -68,3 +68,6 @@ build
 
 # Dist files
 dist
+
+# App files
+app
