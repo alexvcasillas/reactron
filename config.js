@@ -1,4 +1,4 @@
-const environment = 'DEVELOPMENT';
+const environment = "DEVELOPMENT";
 
 module.exports = {
   environment,

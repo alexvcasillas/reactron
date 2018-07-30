@@ -5,32 +5,34 @@
   "description": "Build Desktop applications with React and Electron",
   "main": "main.js",
   "scripts": {
-    "start": "npm run electron",
     "electron": "electron main",
-    "parcel-production": "parcel build ./src/index.js --out-dir app",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder",
+    "dev": "npm-run-all --parallel parcel-watch electron",
+    "parcel-watch": "parcel watch --no-hmr ./src/index.js --out-dir app",
+    "parcel-build": "parcel build ./src/index.js --out-dir app",
+    "pack": "electron-builder",
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
-    "electron-debug": "^1.5.0",
-    "execa": "^0.9.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
   },
   "devDependencies": {
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "devtron": "^1.4.0",
-    "electron": "1.8.2",
-    "electron-builder": "^20.2.0",
-    "electron-debug": "^1.5.0",
+    "electron": "2.0.5",
+    "electron-builder": "20.26.0",
+    "electron-debug": "^2.0.0",
     "electron-react-devtools": "^0.5.3",
-    "parcel-bundler": "^1.6.2"
+    "electron-reloader": "^0.2.0",
+    "npm-run-all": "^4.1.3",
+    "parcel-bundler": "^1.9.7"
   },
   "build": {
     "appId": "com.alexvcasillas.reactron",
-    "files": ["!dist${/*}", "!.cache${/*}", "!src${/*}", "!.gitignore"]
+    "files": [
+      "!dist${/*}",
+      "!.cache${/*}",
+      "!src${/*}",
+      "!.gitignore"
+    ]
   },
   "keywords": [],
   "author": "Alex Casillas <@alexvcasillas>",

@@ -1,20 +1,20 @@
-import React from 'react';
+import React from "react";
 
-import { Description } from './description.component';
+import { Description } from "./description.component";
 
 const styles = {
   wrapper: {
-    position: 'absolute',
+    position: "absolute",
     top: 0,
     left: 0,
-    width: '100%',
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
     padding: 20,
-    textAlign: 'center',
+    textAlign: "center",
   },
   heading: {
     fontWeight: 300,
@@ -29,7 +29,7 @@ export class Title extends React.Component {
   render() {
     return (
       <div style={styles.wrapper}>
-        <h1 style={styles.heading}>Welcome to Reactron !!</h1>
+        <h1 style={styles.heading}>Hello Reactron!</h1>
         <Description />
       </div>
     );

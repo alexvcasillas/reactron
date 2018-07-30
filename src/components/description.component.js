@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const styles = {
   fontWeight: 300,
@@ -9,6 +9,6 @@ const styles = {
 
 export class Description extends React.Component {
   render() {
-    return <div style={styles}>Build desktop applications with React and Electron.</div>;
+    return <div style={styles}>Your desktop application built with React and Electron and Parcel</div>;
   }
 }
