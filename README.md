@@ -16,18 +16,16 @@ It's quite simple, just do the following:
 
 1. `git clone https://github.com/alexvcasillas/reactron.git && cd reactron`
 2. `yarn` _sidenote: electron-bundler works better with `yarnpkg` than `npm`_
-3. `yarn start`
+3. `yarn dev`
 4. Develop you application
-5. `yarn run parcel-production`
-6. `yarn run package`
+5. `yarn parcel-build`
+6. `yarn pack`
 
 **Development**
 
 The development is easy, you will code you application with _React_ from the entry point located at `/src`. Your application should be located there so _Parcel_ knows where to start building things for you.
 
 You won't need to configure enything since _Parcel_ will do all of this for you. Zero conf _React_ development with everything you need.
-
-You may have noticed that there are _two html_ files at the root of your project. The html file named `index.html` is your development entry point for _Parcel_, you can add here whatever you need for development.
 
 **Production**
 
@@ -41,13 +39,8 @@ module.exports = {
 };
 ```
 
-Simply replace the `DEVELOPMENT` literal with the `PRODUCTION` literal and keep reading the next paragraph.
+Simply replace the `DEVELOPMENT` literal with the `PRODUCTION` and you're ready to run `yarn parcel-build` and then `yarn pack` to distribute your app in production mode.
 
-After that small change, you need to execute the command `yarn run parcel-production` to let parcel do all the bundling and optimizations that should be needed and then just execute `yarn run package` to bundle your electron app.
-
-**TODOs**
-
-* [ ] Find a way to remove the need of two html files.
 
 **Contributing**
 
